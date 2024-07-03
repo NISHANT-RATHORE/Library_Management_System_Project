@@ -17,7 +17,7 @@ public class TransactionController {
     TransactionService transactionService;
 
     @PostMapping("/issue")
-    public ResponseEntity<Transactions> issueBook(@RequestBody @Valid TransactionRequest request){
+    public ResponseEntity<?> issueBook(@RequestBody @Valid TransactionRequest request){
         Transactions createdTransaction = transactionService.issueBook(request);
         return new ResponseEntity<>(createdTransaction, HttpStatus.OK);
     }
