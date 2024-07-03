@@ -24,7 +24,7 @@ public class Book {
     String BookTitle;
 
     @Column(length = 10,unique = true,nullable = false)
-    String BookNo;
+    String bookNo;
 
     int SecurityAmount;
 

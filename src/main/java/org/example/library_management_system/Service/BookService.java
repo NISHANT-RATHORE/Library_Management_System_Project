@@ -27,4 +27,13 @@ public class BookService {
         book.setAuthor(authorFromDB);
         return bookRepository.save(book);
     }
+
+    public void updateBookMetaData(Book book){
+        bookRepository.save(book);
+    }
+
+
+    public Book getBookByBookNo(String bookNo) {
+        return bookRepository.findBookByBookNo(bookNo);
+    }
 }

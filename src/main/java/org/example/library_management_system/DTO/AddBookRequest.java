@@ -17,7 +17,7 @@ public class AddBookRequest {
     String BookTitle;
 
     @NotBlank(message = "Book title should not be blanked")
-    String BookNo;
+    String bookNo;
 
     @Positive(message = "amount should be positive")
     int SecurityAmount;

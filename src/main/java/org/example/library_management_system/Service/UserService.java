@@ -18,4 +18,8 @@ public class UserService {
         user.setUserType(UserType.Student);
         return userRepository.save(user);
     }
+
+    public User fetchUserByEmail(String userEmail) {
+        return userRepository.findByEmail(userEmail);
+    }
 }

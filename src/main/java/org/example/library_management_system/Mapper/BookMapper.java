@@ -8,7 +8,7 @@ import org.example.library_management_system.Model.Book;
 public class BookMapper {
     public Book mapToBook(AddBookRequest addBookRequest){
         return Book.builder()
-                .BookNo(addBookRequest.getBookNo())
+                .bookNo(addBookRequest.getBookNo())
                 .BookTitle(addBookRequest.getBookTitle())
                 .SecurityAmount(addBookRequest.getSecurityAmount())
                 .booktype(addBookRequest.getBooktype())
