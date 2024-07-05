@@ -9,9 +9,9 @@ public class BookMapper {
     public Book mapToBook(AddBookRequest addBookRequest){
         return Book.builder()
                 .bookNo(addBookRequest.getBookNo())
-                .BookTitle(addBookRequest.getBookTitle())
-                .SecurityAmount(addBookRequest.getSecurityAmount())
-                .booktype(addBookRequest.getBooktype())
+                .bookTitle(addBookRequest.getBookTitle())
+                .securityAmount(addBookRequest.getSecurityAmount())
+                .bookType(addBookRequest.getBooktype())
                 .build();
     }
 

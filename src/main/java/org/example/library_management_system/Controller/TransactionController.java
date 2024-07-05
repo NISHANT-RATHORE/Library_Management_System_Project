@@ -17,8 +17,14 @@ public class TransactionController {
     TransactionService transactionService;
 
     @PostMapping("/issue")
-    public ResponseEntity<?> issueBook(@RequestBody @Valid TransactionRequest request){
+    public ResponseEntity<?> issueBook(@RequestBody @Valid TransactionRequest request)throws TransactionException{
         Transactions createdTransaction = transactionService.issueBook(request);
         return new ResponseEntity<>(createdTransaction, HttpStatus.OK);
+    }
+
+    @PutMapping("/return")
+    public ResponseEntity<Integer> returnBook(@RequestBody @Valid TransactionRequest request) throws TransactionException{
+        Integer settlementAmount = transactionService.returnBook(request);
+        return new ResponseEntity<>(settlementAmount,HttpStatus.OK);
     }
 }

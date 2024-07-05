@@ -1,4 +1,5 @@
 package org.example.library_management_system.Model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -21,12 +22,12 @@ public class Book {
     int id;
 
     @Column(length = 30)
-    String BookTitle;
+    String bookTitle;
 
     @Column(length = 10,unique = true,nullable = false)
     String bookNo;
 
-    int SecurityAmount;
+    int securityAmount;
 
     @CreationTimestamp
     Date createOn;
@@ -35,14 +36,17 @@ public class Book {
     Date updateOn;
 
     @ManyToOne
+            @JsonIgnore
     User user;
 
     @OneToMany(mappedBy = "book")
+            @JsonIgnore
     List<Transactions> transactions;
 
     @ManyToOne
+            @JsonIgnore
     Author author;
 
     @Enumerated (value = EnumType.STRING)
-    BookType booktype;
+    BookType bookType;
 }

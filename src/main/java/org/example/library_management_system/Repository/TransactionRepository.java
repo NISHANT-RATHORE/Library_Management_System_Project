@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TransactionRepository extends JpaRepository<Transactions,Integer> {
+    Transactions findByUserEmailAndBookBookNo(String userEmail,String bookNo);
 }
